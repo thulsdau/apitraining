@@ -3,3 +3,7 @@
 - https://github.com/agiliq/so-starving/blob/master/bottle/app.py
 - http://flnkr.com/2016/03/bitbucket/
 - Hmmm
+
+== Notes ==
+- Alle exercises eines Trainings in der sqlite DB in ein neues Training kopiere:
+insert into exercises (training, name, solution_type, solution) select "apitraining-stuttgart-032016", name, solution_type, solution from exercises where training="devnetexpress-berlin";

@@ -100,6 +100,7 @@ def get_solutions_for_username(training,username):
     c = conn.cursor()
     c.execute("SELECT e.rowid, e.name, s.username, s.solution, s.submit_timestamp, s.correct FROM exercises as e, submitted_solutions as s WHERE e.rowid=s.exercise_id and e.training = ? and s.username = ? ORDER BY e.name, s.submit_timestamp;",(training,username))
     solutions = c.fetchall()
+    c.close()
     return template('solutions',solutions = solutions, training = training)
 
 @post('/submit')
